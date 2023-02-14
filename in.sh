@@ -9,7 +9,7 @@ apt install -y autoconf automake bc bison build-essential cmake curl flex gcc g+
 #php版本尾号改最新
 #apt install -y php7.1-cli php7.1-dev php7.1-fpm php7.1-bcmath php7.1-bz2 php7.1-common php7.1-curl php7.1-gd php7.1-gmp php7.1-imap php7.1-intl php7.1-json php7.1-mbstring php7.1-mysql php7.1-readline php7.1-recode php7.1-soap php7.1-sqlite3 php7.1-xml php7.1-xmlrpc php7.1-zip php7.1-opcache php7.1-xsl 
 apt autoremove -y
-wget https://github.com/FelixTennouji/privateWeb/nginx.tar -O /root/nginx.tar
+wget https://github.com/FelixTennouji/privateWeb/raw/main/nginx.tar -O /root/nginx.tar
 mkdir -p /usr/local/src/cannoli/{modules,nginx,packages/{openssl,pcre,zlib}} 
 mkdir -p /etc/nginx/{cache/{client,proxy,fastcgi,uwsgi,scgi},config,lock,logs,pid,ssl}
 cd /usr/local/src/cannoli/nginx 
@@ -66,9 +66,9 @@ useradd -d /etc/nginx/ -s /sbin/nologin nginx
                --with-openssl=/usr/local/src/cannoli/packages/openssl
 make
 make install
-wget https://github.com/FelixTennouji/privateWeb/nginx.service -O /lib/systemd/system/nginx.service
+wget https://github.com/FelixTennouji/privateWeb/raw/main/nginx.service -O /lib/systemd/system/nginx.service
 mkdir -p /var/www/main
-wget https://github.com/FelixTennouji/privateWeb/404.html -O /var/www/main/404.html
+wget https://github.com/FelixTennouji/privateWeb/raw/main/404.html -O /var/www/main/404.html
 apt install -y mariadb-server
 mysql_secure_installation
 cd ~
